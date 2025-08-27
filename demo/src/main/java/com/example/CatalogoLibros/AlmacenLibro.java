@@ -23,8 +23,11 @@ public class AlmacenLibro {
                 break;
             }
         }
-
-
     }
+
+    public void buscarLibro(String autor) {
+        
+
+    }     
 
 }

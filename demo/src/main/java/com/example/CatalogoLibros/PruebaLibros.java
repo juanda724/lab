@@ -16,7 +16,9 @@ public class PruebaLibros {
 
         almacen.eliminarLibro("978-1-56619-909-4");
 
-        System.out.println(almacen.libros);
+    for (Libro libro : almacen.libros) {
+        System.out.println("Título: " + libro.getTitulo() + ", Autor: " + libro.getAutor() + ", Año: " + libro.getAnioPublicacion() + ", ISBN: " + libro.getIsbn());
+    }
 
     }
     
