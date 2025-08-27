@@ -36,12 +36,23 @@ public class AlmacenLibro {
         return encontrados;
     }     
 
-    public void obtenerCincoRecientes(){
-         var libros = this.libros;
+    public void obtenerLibrosAscendente(){
+       Collections.sort(this.libros);
 
-         Collections.sort(libros);
-         
-        }
-
+        
     }
- 
+
+     public ArrayList<Libro> obtenerCincoRecientes() {
+        obtenerLibrosAscendente();
+        ArrayList<Libro> recientes = new ArrayList<>();
+        int total = this.libros.size();
+        for (int i = total - 1; i >= Math.max(0, total - 5); i--) {
+            Libro libro = this.libros.get(i);
+            recientes.add(libro);
+            System.out.println("Título: " + libro.getTitulo() + ", Autor: " + libro.getAutor() + ", Año: " + libro.getAnioPublicacion() + ", ISBN: " + libro.getIsbn());
+        }
+        return recientes;
+    }
+
+
+}
