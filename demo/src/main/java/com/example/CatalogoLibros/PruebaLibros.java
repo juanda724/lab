@@ -1,5 +1,7 @@
 package com.example.CatalogoLibros;
 
+import java.util.ArrayList;
+
 public class PruebaLibros {
     public static void main(String[] args) {
         System.out.println("Bienvenido al catálogo de libros");
@@ -14,12 +16,35 @@ public class PruebaLibros {
         almacen.agregarLibro(libro2);
         almacen.agregarLibro(libro3);
 
+        System.out.println("Buscando libros por autor...");
+
+        
+        ArrayList<Libro> librosDeGabriel = almacen.buscarLibro("Gabriel García Márquez");
+        
+        System.out.println("Libros de Gabriel García Márquez:");  
+
+        for (Libro libro : librosDeGabriel) {
+        System.out.println("Título: " + libro.getTitulo() + ", Autor: " + libro.getAutor() + ", Año: " + libro.getAnioPublicacion() + ", ISBN: " + libro.getIsbn());
+
+        }
+
+        System.out.println("Obteniendo libros más recientes...");
+
+        almacen.obtenerCincoRecientes();
+        for(Libro libro : almacen.libros){
+            System.out.println("Título: " + libro.getTitulo() + ", Autor: " + libro.getAutor() + ", Año: " + libro.getAnioPublicacion() + ", ISBN: " + libro.getIsbn());
+        }
+
+        System.out.println("Eliminando libro por ISBN...");
+
         almacen.eliminarLibro("978-1-56619-909-4");
 
-    for (Libro libro : almacen.libros) {
-        System.out.println("Título: " + libro.getTitulo() + ", Autor: " + libro.getAutor() + ", Año: " + libro.getAnioPublicacion() + ", ISBN: " + libro.getIsbn());
+        System.out.println("Libros restantes en el catálogo:");
+        for(Libro libro : almacen.libros){
+            System.out.println("Título: " + libro.getTitulo() + ", Autor: " + libro.getAutor() + ", Año: " + libro.getAnioPublicacion() + ", ISBN: " + libro.getIsbn());
+        }
+
+        
     }
 
-    }
-    
 }

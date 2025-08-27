@@ -1,6 +1,7 @@
 package com.example.CatalogoLibros;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class AlmacenLibro {
 
@@ -17,7 +18,7 @@ public class AlmacenLibro {
 
     public void eliminarLibro(String isbn) {
         
-        for (int i = libros.size() - 1 ; i > 0 ; i--) {
+        for (int i = libros.size() - 1 ; i >= 0 ; i--) {
             if (libros.get(i).getIsbn().equals(isbn)) {
                 libros.remove(i);
                 break;
@@ -25,9 +26,22 @@ public class AlmacenLibro {
         }
     }
 
-    public void buscarLibro(String autor) {
-        
-
+    public ArrayList<Libro> buscarLibro(String autor) {
+        ArrayList<Libro> encontrados = new ArrayList<>();
+        for(int i = libros.size() - 1 ; i >= 0 ; i--) {
+            if (libros.get(i).getAutor().equals(autor)) {
+                encontrados.add(libros.get(i));
+            }
+        }
+        return encontrados;
     }     
 
-}
+    public void obtenerCincoRecientes(){
+         var libros = this.libros;
+
+         Collections.sort(libros);
+         
+        }
+
+    }
+ 
