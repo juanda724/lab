@@ -1,6 +1,8 @@
-public package com.example.CatalogoLibros;
+package com.example.CatalogoLibros;
 
-class AlmacenLibro {
+import java.util.ArrayList;
+
+public class AlmacenLibro {
 
     public ArrayList<Libro> libros;
 
