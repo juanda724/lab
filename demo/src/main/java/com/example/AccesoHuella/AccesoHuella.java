@@ -1,12 +1,20 @@
 package com.example.AccesoHuella;
 
+import java.util.HashSet;
+
+
+
 public class AccesoHuella {
     
-    public AccesoHuella() {
-        // Constructor
+    private HashSet<String> huellas = new HashSet<>();
+
+    public boolean registrarHuella(String id) {
+        return huellas.add(id);
     }
-    
-    public static void main(String[] args) {
-        System.out.println("Clase AccesoHuella creada exitosamente");
+
+    public int cantidadHuellasRegistradas() {
+        return huellas.size();
     }
+
+
 }

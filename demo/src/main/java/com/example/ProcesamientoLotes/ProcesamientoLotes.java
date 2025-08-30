@@ -1,12 +1,17 @@
 package com.example.ProcesamientoLotes;
 
-public class ProcesamientoLotes {
-    
-    public ProcesamientoLotes() {
-        // Constructor
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+class Lote {
+    private String nombre;
+
+    public Lote(String nombre) {
+        this.nombre = nombre;
     }
-    
-    public static void main(String[] args) {
-        System.out.println("Clase ProcesamientoLotes creada exitosamente");
+
+    public String getNombre() {
+        return nombre;
     }
 }
+
